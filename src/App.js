@@ -1,3 +1,5 @@
+import Container from 'react-bootstrap/Container';
+
 export default function App() {
   const posts = [
     {
@@ -18,7 +20,7 @@ export default function App() {
     },
   ];
   return (
-    <>
+    <Container>
       <h1>Microblog</h1>
       {posts.length > 0 ? (
         posts.map((post) => {
@@ -33,6 +35,6 @@ export default function App() {
       ) : (
         <p>There are no blog posts.</p>
       )}
-    </>
+    </Container>
   );
 }
