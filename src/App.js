@@ -1,40 +1,16 @@
-import Container from 'react-bootstrap/Container';
+import Container from "react-bootstrap/Container";
+
+import Header from "./components/Header";
+import Body from "./components/Body";
+import Posts from "./components/Posts";
 
 export default function App() {
-  const posts = [
-    {
-      id: 1,
-      text: 'First post!',
-      timestamp: 'a minute ago',
-      author: {
-        username: 'susan',
-      },
-    },
-    {
-      id: 2,
-      text: 'Second post!',
-      timestamp: 'an hour ago',
-      author: {
-        username: 'john',
-      },
-    },
-  ];
   return (
-    <Container>
-      <h1>Microblog</h1>
-      {posts.length > 0 ? (
-        posts.map((post) => {
-          return (
-            <p key={post.id}>
-              <b>{post.author.username}</b> &mdash; {post.timestamp}
-              <br />
-              {post.text}
-            </p>
-          );
-        })
-      ) : (
-        <p>There are no blog posts.</p>
-      )}
+    <Container fluid className="App">
+      <Header />
+      <Body sidebar={true}>
+        <Posts />
+      </Body>
     </Container>
   );
 }
